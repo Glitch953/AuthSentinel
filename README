@@ -1,39 +1,28 @@
 # AuthSentinel
 
-A Python-based defensive cybersecurity tool that analyzes authentication logs and identifies potentially suspicious login activity.
+AuthSentinel is a Python project I built to practice log analysis and learn more about defensive cybersecurity.
 
-## Features
+The program reads login records from a text file and analyzes successful and failed login attempts.
 
-- **Login Statistics:** Counts successful and failed login attempts.
-- **IP Tracking:** Tracks failed login attempts by IP address.
-- **User Tracking:** Monitors failed login attempts for each username.
-- **Time-Based Detection:** Identifies consecutive failed login attempts from the same IP within 60 seconds.
-- **Risk Classification:** Assigns activity levels based on failed login attempts:
-  - LOW: 1–2 failed attempts
-  - MEDIUM: 3–4 failed attempts
-  - HIGH: 5 or more failed attempts
-- **Security Report:** Generates a summary of login activity and suspicious events.
+## What it does
 
-## Technologies
+- Counts successful and failed logins.
+- Tracks failed attempts by IP address.
+- Tracks failed attempts by username.
+- Checks whether two failed attempts from the same IP happened within 60 seconds.
+- Gives each user a basic risk level based on failed attempts.
+- Prints a report with the collected results.
+
+## Built with
 
 - Python
 - datetime
 - Dictionaries and Lists
 - File Handling
-- Log Parsing
-
-## Project Structure
-
-```text
-AuthSentinel/
-├── main.py
-├── login_logs.txt
-└── README.md
-```
 
 ## Log Format
 
-AuthSentinel reads comma-separated log entries containing four fields:
+Each log entry should contain:
 
 ```text
 username,status,ip_address,timestamp
@@ -47,36 +36,20 @@ sara,SUCCESS,192.168.1.15,2026-10-31 20:12:00
 ahmad,FAILED,192.168.1.10,2026-10-31 20:13:00
 ```
 
-## Installation & Usage
-
-Clone the repository:
-
-```bash
-git clone https://github.com/Glitch953/AuthSentinel.git
-```
-
-Navigate to the project directory:
-
-```bash
-cd AuthSentinel
-```
-
-Run the analyzer:
+## Run the project
 
 ```bash
 python main.py
 ```
 
-## Disclaimer
+## Note
 
-AuthSentinel is an educational project created for defensive cybersecurity learning.
+This is a learning project. The risk levels are based only on failed login counts and do not prove that an account or IP address is malicious.
 
-Its risk classifications are basic indicators based on failed login counts. They do not confirm malicious activity.
-
-Only analyze sample logs or logs you are authorized to access.
+All testing should use sample logs or data you are authorized to analyze.
 
 ## Author
 
-**Ahmad Al-Halwani**
+Ahmad Al-Halwani
 
-GitHub: [@Glitch953](https://github.com/Glitch953)
+GitHub: https://github.com/Glitch953
